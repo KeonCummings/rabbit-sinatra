@@ -1,0 +1,39 @@
+.wrapper{
+  display: grid;
+  display-grid-columns: 100%;
+}
+
+.nav {
+  display: block;
+  width: 30px;
+  margin: 1em 0 0 1em;
+}
+
+.nav > div{
+  height: 4px;
+  background-color: brown;
+  margin: 5px 0;
+  border-radius: 25px;
+  transition: 0.3s;
+}
+
+.one{
+  width: 30px;
+}
+
+.two{
+  width: 20px;
+}
+
+.three{
+  width: 25px;
+}
+
+.nav:hover > div {
+  width: 30px;
+}
+
+.swiper-container {
+    width: 600px;
+    height: 300px;
+}
