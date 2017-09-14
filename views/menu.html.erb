@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The Growling Rabbit</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/font-awesome/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="nav" id="nav">
+        <a href="javascipt:void(0)" class="close" onclick="closeNav()">&times;</a>
+        <a href="">Home</a>
+        <a href="">Menu</a>
+      </div>
+      <div id="open" class="open" onclick="openNav()">&#9776</div>
+      <div class="menu">
+        <div class="meal">meal</div>
+        <div class="meal_type">meal_type</div>
+        <div class="time">time</div>
+        <div class="days">days</div>
+        <div class="notes">notes</div>
+      </div>
+    </div>
+    <script>
+        function openNav() {
+          document.getElementById("open").style.display = "none";
+          document.getElementById("nav").style.width = "100%"
+        }
+
+        function closeNav() {
+          document.getElementById("nav").style.width = "0";
+          document.getElementById("open").style.display = "block";
+        }
+    </script>
+  </body>
+</html>
