@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The Growling Rabbit</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/font-awesome/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="nav" id="nav">
+        <a href="javascipt:void(0)" class="close" onclick="closeNav()">&times;</a>
+        <a href="">Home</a>
+        <a href="">Menu</a>
+      </div>
+      <div id="open" class="open" onclick="openNav()">&#9776</div>
+      <div class="location">
+        <div class="logo">
+          <img src="https://res.cloudinary.com/grubhub/image/upload/w_400,h_300,f_auto,fl_lossy,q_80,c_fit/rif6awn9bze2s0ez6lrm" alt="Rif6awn9bze2s0ez6lrm" />
+        </div>
+          5938 N. Broadway Chicago, IL 60660 <br>
+          773.654.1444
+          <hr>
+          <i class="fa fa-facebook fa-lg" aria-hidden="true"></i>
+          &nbsp
+          <i class="fa fa-instagram fa-lg" aria-hidden="true"></i>
+          &nbsp
+          <i class="fa fa-twitter fa-lg" aria-hidden="true"></i>
+      </div>
+    </div>
+    </div>
+    <script>
+        function openNav() {
+          document.getElementById("open").style.display = "none";
+          document.getElementById("nav").style.width = "100%"
+        }
+
+        function closeNav() {
+          document.getElementById("nav").style.width = "0";
+          document.getElementById("open").style.display = "block";
+        }
+    </script>
+  </body>
+</html>

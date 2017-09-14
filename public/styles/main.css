@@ -1,39 +1,103 @@
-.wrapper{
-  display: grid;
-  display-grid-columns: 100%;
+* {box-sizing: border-box}
+
+body{
+  margin: 40px;
+  background:url("../images/cake.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: top;
+  background-repeat:no-repeat;
 }
 
-.nav {
+.wrapper{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 100px 100px 100px;
+  grid-gap: 20px;
+  padding: 20px;
+  grid-auto-flow: rows;
+}
+
+.wrapper div{
+  /*border: 1px solid rgb(0, 95, 107);
+  /*border-radius: 3px;*/
+  /*padding: 20px;*/
+}
+
+.wrapper div span{
+   border: 1px solid rgb(0, 95, 107);
+   border-radius: 3px;
+}
+
+.menu{
+    /*grid-column-start: 1;
+		grid-column-end: 2;
+		grid-row-start: 1;
+		grid-row-end: 2;*/
+}
+
+.logo{
+    /*grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 5;*/
+}
+
+.location{
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    color: white;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    text-align:center;
+}
+
+.open{
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  float:left;
+  color: brown;
+  font-size: 50px;
+  cursor: pointer;
+  margin: 1em 0 0 1em;
   display: block;
-  width: 30px;
+}
+
+.nav{
+  grid-column-start: 1;
+  grid-column-end: -1;
+  grid-row-start: 1;
+  grid-row-end: -1;
+  width: 0;
+  overflow-x: hidden;
+  height:100wh;
+  z-index: 1;
+  background-color: rgba(34, 65, 93, 0.9);
+  transition: 0.5s;
+  display:block;
+}
+
+.nav a{
+  clear: left;
+  color: white;
+  font-size: 22px;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  padding: 1em 0;
+  transition: 0.3s
+}
+
+.close{
+  float: left;
   margin: 1em 0 0 1em;
 }
 
-.nav > div{
-  height: 4px;
-  background-color: brown;
-  margin: 5px 0;
-  border-radius: 25px;
-  transition: 0.3s;
-}
-
-.one{
-  width: 30px;
-}
-
-.two{
-  width: 20px;
-}
-
-.three{
-  width: 25px;
-}
-
-.nav:hover > div {
-  width: 30px;
-}
-
-.swiper-container {
-    width: 600px;
-    height: 300px;
+.nav a:not(:first-child):hover{
+  background-color: #f7941d;
 }
