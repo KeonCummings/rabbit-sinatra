@@ -2,7 +2,7 @@
 
 body{
   margin: 40px;
-  background:url("../images/cake.jpg");
+  background:url("../images/eggsammy.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-position: top;
@@ -11,41 +11,11 @@ body{
 
 .wrapper{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-template-rows: 100px 100px 100px;
   grid-gap: 20px;
   padding: 20px;
   grid-auto-flow: rows;
-}
-
-.wrapper div{
-  /*border: 1px solid rgb(0, 95, 107);
-  /*border-radius: 3px;*/
-  /*padding: 20px;*/
-}
-
-.wrapper div span{
-   border: 1px solid rgb(0, 95, 107);
-   border-radius: 3px;
-}
-
-.logo{
-    /*grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 5;*/
-}
-
-.location{
-  font-family: 'Open Sans', sans-serif;
-  font-family: 'Roboto', sans-serif;
-  font-size: 30px;
-  color: white;
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 2;
-  text-align:center;
 }
 
 .open{
@@ -72,7 +42,7 @@ body{
   z-index: 1;
   background-color: rgba(34, 65, 93, 0.9);
   transition: 0.5s;
-  display:block;
+  display: inline-block;
 }
 
 .nav a{
@@ -83,7 +53,7 @@ body{
   text-decoration: none;
   text-align: center;
   padding: 1em 0;
-  transition: 0.3s
+  transition: 0.3s;
 }
 
 .close{
@@ -94,16 +64,41 @@ body{
 .nav a:not(:first-child):hover{
   background-color: #f7941d;
 }
-/*.menu{
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 100px 100px 100px 100px 100px 100px;
-    grid-gap: 20px;
-    font-family: 'Open Sans', sans-serif;
-    font-family: 'Roboto', sans-serif;
-    font-size: 30px;
-    color: white;
-}*/
- a{
-   color: white;
- }
+
+.menu-wrapper{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
+  grid-auto-flow: rows;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  justify-content: space-between;
+  padding-left: 50px;
+}
+
+.menu-wrapper .menu{
+  padding: 20px;
+  background: #e9e3d3;
+}
+
+.menu-items{
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-size: 10px;
+  color: black;
+}
+
+.meal-info{
+  grid-column: 1/-1;
+  text-align: center;
+  background: #e9e3d3;
+}
+
+.meal-info-foot{
+  grid-column: 1/-1;
+  text-align: center;
+  background: #e9e3d3;
+}

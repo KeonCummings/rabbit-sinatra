@@ -3,25 +3,106 @@
   <head>
     <meta charset="utf-8">
     <title>The Growling Rabbit</title>
-    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/menu.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="/styles/font-awesome/css/font-awesome.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
   </head>
   <body>
     <div class="wrapper">
       <div class="nav" id="nav">
         <a href="javascipt:void(0)" class="close" onclick="closeNav()">&times;</a>
-        <a href="">Home</a>
-        <a href="">Menu</a>
+        <a href="/">Home</a>
+        <a href="/menu">Menu</a>
       </div>
       <div id="open" class="open" onclick="openNav()">&#9776</div>
-      <div class="menu">
-        <div class="meal">meal</div>
-        <div class="meal_type">meal_type</div>
-        <div class="time">time</div>
-        <div class="days">days</div>
-        <div class="notes">notes</div>
+      <div class="menu-wrapper">
+      <div class="meal-info">
+        <div> <h3> Times Served: 8am - 3pm </h3></div>
+        <div> <h3> Days Served: Tuesday - Sunday </h3> </div>
+        <div> <h4> (v) Vegan (WF) Wheat-Free | Please ask if you need us to accommodate a dish and make it wheat-free and/or vegan. </h4> </div>
       </div>
+      <div class="meal-info"> <h3> Bombwiches </h3></div>
+        <% for i in 0..64 do %>
+          <% if @menu_items[i]["meal_type"] == "Bombwiches" %>
+            <div class="menu">
+                <div class="menu-items"> <h1> <%= @menu_items[i]["menu_item"]%>  </h1> </div>
+                <div class="notes"> <%= @menu_items[i]["notes"]%> </div> <br>
+                <div class="price"> <%=  "$" + @menu_items[i]["price"]%> </div>
+            </div>
+            <% end %>
+          <% end %>
+          <div class="meal-info"> <h3> Breakfast Sandwiches </h3></div>
+          <% for i in 0..64 do %>
+            <% if @menu_items[i]["meal_type"] == "Breakfast Sandwiches" %>
+              <div class="menu">
+                  <div class="menu-items"> <h1> <%= @menu_items[i]["menu_item"] %>  </h1> </div>
+                  <div class="notes"> <%= @menu_items[i]["notes"]%> </div> <br>
+                  <div class="price"> <%=  "$" + @menu_items[i]["price"]%> </div>
+              </div>
+              <% end %>
+            <% end %>
+            <div class="meal-info"> <h3> Burritos </h3></div>
+            <% for i in 0..64 do %>
+              <% if @menu_items[i]["meal_type"] == "Burritos" %>
+                <div class="menu">
+                    <div class="menu-items"> <h1> <%= @menu_items[i]["menu_item"] %>  </h1> </div>
+                    <div class="notes"> <%= @menu_items[i]["notes"]%> </div> <br>
+                    <div class="price"> <%=  "$" + @menu_items[i]["price"]%> </div>
+                </div>
+                <% end %>
+              <% end %>
+              <div class="meal-info"> <h3> Eggs & Such </h3></div>
+              <% for i in 0..64 do %>
+                <% if @menu_items[i]["meal_type"] == "Eggs & Such" %>
+                  <div class="menu">
+                      <div class="menu-items"> <h1> <%= @menu_items[i]["menu_item"] %>  </h1> </div>
+                      <div class="notes"> <%= @menu_items[i]["notes"]%> </div> <br>
+                      <div class="price"> <%=  "$" + @menu_items[i]["price"]%> </div>
+                  </div>
+                  <% end %>
+                <% end %>
+                <div class="meal-info">
+                  <div> <h3> Kids </h3></div>
+                </div>
+                <% for i in 0..64 do %>
+                  <% if @menu_items[i]["meal_type"] == "Kits‰Ûª menu" %>
+                    <div class="menu">
+                        <div class="menu-items"> <h1> <%= @menu_items[i]["menu_item"] %>  </h1> </div>
+                        <div class="notes"> <%= @menu_items[i]["notes"]%> </div> <br>
+                        <div class="price"> <%=  "$" + @menu_items[i]["price"]%> </div>
+                    </div>
+                    <% end %>
+                  <% end %>
+                  <div class="meal-info">
+                    <div> <h3> Lighter Fare </h3></div>
+                  </div>
+                  <% for i in 0..64 do %>
+                    <% if @menu_items[i]["meal_type"] == "Lighter fare" %>
+                      <div class="menu">
+                          <div class="menu-items"> <h1> <%= @menu_items[i]["menu_item"] %>  </h1> </div>
+                          <div class="notes"> <%= @menu_items[i]["notes"]%> </div> <br>
+                          <div class="price"> <%=  "$" + @menu_items[i]["price"]%> </div>
+                      </div>
+                      <% end %>
+                    <% end %>
+            <div class="meal-info">
+              <div> <h3> Sides </h3></div>
+            </div>
+            <% for i in 0..64 do %>
+              <% if @menu_items[i]["meal_type"] == "Sides" %>
+                <div class="menu">
+                    <div class="menu-items"> <h1> <%= @menu_items[i]["menu_item"]%>  </h1> </div>
+                    <div class="notes"> <%= @menu_items[i]["notes"]%> </div> <br>
+                    <div class="price"> <%=  "$" + @menu_items[i]["price"]%> </div>
+                </div>
+                <% end %>
+              <% end %>
+          <div class="meal-info-foot">
+              <div> <h5> We make the majority of our sauces, dressings, chutneys, marinades, jams & sausages in house. Please be aware ingredients may vary. Please tell your server if you have any allergies. </h5> </div>
+                <div> <h5> Notice: The consumption of raw Or under cooked eggs, meat, poultry, seafood or shellfish may increase your risk of food-borne illness. Egg whites available at no additional charge</h5> </div>
+          </div>
+      </div>
+    </div>
     </div>
     <script>
         function openNav() {

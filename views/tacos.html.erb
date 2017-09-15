@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>The Growling Rabbit</title>
-    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/tacos.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     <link rel="stylesheet" href="/styles/font-awesome/css/font-awesome.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -21,27 +22,31 @@
         <a href="/omeletsandskillets">Omelets and Skillets</a>
         <a href="/pancakes">Pancakes</a>
         <a href="/sandwiches">Sandwiches</a>
-
         <a href="/soupsandsalads">Soups and Salads</a>
         <a href="/tacos">Tacos</a>
         <a href="/waffles">Waffles</a>
       </div>
       <div id="open" class="open" onclick="openNav()">&#9776</div>
-      <div class="location">
-        <div class="logo">
-          <img src="https://res.cloudinary.com/grubhub/image/upload/w_400,h_300,f_auto,fl_lossy,q_80,c_fit/rif6awn9bze2s0ez6lrm" alt="Rif6awn9bze2s0ez6lrm" />
+      <div class="menu-wrapper">
+        <div class="meal-info">
+          <div> <h3>Times Served: 8am - 3pm </h3></div>
+          <div> <h3>Days Served: Tuesday - Sunday</h3> </div>
+          <div> <h4> (v) Vegan (WF) Wheat-Free | Please ask if you need us to accommodate a dish and make it wheat-free and/or vegan. </h4> </div>
         </div>
-          5938 N. Broadway Chicago, IL 60660 <br>
-          773.654.1444
-          <hr>
-
-       <a href="https://www.facebook.com/growlingrabbit/">     <i class="fa fa-facebook fa-lg" aria-hidden="true"> </i> </a>
-          &nbsp
-          <i class="fa fa-instagram fa-lg" aria-hidden="true"></i>
-          &nbsp
-          <i class="fa fa-twitter fa-lg" aria-hidden="true"></i>
+        <% for i in 0..64 do %>
+          <% if @menu_items[i]["meal_type"] == "Tacos " %>
+            <div class="menu">
+                <div class="menu-items"> <h1> <%= @menu_items[i]["menu_item"] %>  </h1> </div>
+                <div class="notes"> <%= @menu_items[i]["notes"]%> </div> <br>
+                <div class="price"> <%=  "$" + @menu_items[i]["price"]%> </div>
+            </div>
+            <% end %>
+          <% end %>
+          <div class="meal-info-foot">
+              <div> <h5> We make the majority of our sauces, dressings, chutneys, marinades, jams & sausages in house. Please be aware ingredients may vary. Please tell your server if you have any allergies. </h5> </div>
+                <div> <h5> Notice: The consumption of raw Or under cooked eggs, meat, poultry, seafood or shellfish may increase your risk of food-borne illness. Egg whites available at no additional charge</h5> </div>
+          </div>
       </div>
-    </div>
     </div>
     <script>
         function openNav() {
