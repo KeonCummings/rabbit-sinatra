@@ -3,11 +3,11 @@ require 'rubygems'
 require 'csv'
 require "sinatra/base"
 
-Tilt.register Tilt::ERBTemplate, 'html.erb'
-
-set :public_folder, 'public'
-
 class GrowlingRabbit < Sinatra::Base
+
+  Tilt.register Tilt::ERBTemplate, 'html.erb'
+
+  set :public_folder, 'public'
 
   get "/" do
     erb :index
