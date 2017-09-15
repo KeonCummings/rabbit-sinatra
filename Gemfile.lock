@@ -1,15 +1,13 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    mustermann (1.0.1)
-    rack (2.0.3)
-    rack-protection (2.0.0)
+    rack (1.6.8)
+    rack-protection (1.5.3)
       rack
-    sinatra (2.0.0)
-      mustermann (~> 1.0)
-      rack (~> 2.0)
-      rack-protection (= 2.0.0)
-      tilt (~> 2.0)
+    sinatra (1.4.8)
+      rack (~> 1.5)
+      rack-protection (~> 1.4)
+      tilt (>= 1.3, < 3)
     tilt (2.0.8)
 
 PLATFORMS
@@ -19,7 +17,7 @@ DEPENDENCIES
   sinatra
 
 RUBY VERSION
-   ruby 2.4.0p0
+   ruby 2.0.0p648
 
 BUNDLED WITH
-   1.15.3
+   1.15.4
