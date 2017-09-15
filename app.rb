@@ -7,7 +7,7 @@ Tilt.register Tilt::ERBTemplate, 'html.erb'
 
 set :public_folder, 'public'
 
-class GrowlingRabbit < Sinatra::Base; end
+class GrowlingRabbit < Sinatra::Base
 
   get "/" do
     erb :index
