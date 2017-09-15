@@ -1,151 +1,147 @@
-require 'sinatra'
 require 'rubygems'
+require 'bundler'
 require 'csv'
-require "sinatra/base"
+Bundler.require
 
-class GrowlingRabbit < Sinatra::Base
+Tilt.register Tilt::ERBTemplate, 'html.erb'
 
-  Tilt.register Tilt::ERBTemplate, 'html.erb'
+set :public_folder, 'public'
 
-  set :public_folder, 'public'
+get "/" do
+  erb :index
+end
 
-  get "/" do
-    erb :index
+get "/menu" do
+  data_file = 'rabbit-sinatra.csv'
+  @menu_items = []
+  CSV.foreach(data_file, headers: true, :encoding => 'utf-8') do |row|
+    @menu_items << row.to_hash
   end
+  erb :menu
+end
 
-  get "/menu" do
-    data_file = 'rabbit-sinatra.csv'
-    @menu_items = []
-    CSV.foreach(data_file, headers: true, :encoding => 'utf-8') do |row|
-      @menu_items << row.to_hash
-    end
-    erb :menu
+get "/burritos" do
+  data_file = 'rabbit-sinatra.csv'
+  @menu_items = []
+  CSV.foreach(data_file, headers: true, :encoding => 'utf-8') do |row|
+    @menu_items << row.to_hash
   end
+  erb :burritos
+end
 
-  get "/burritos" do
-    data_file = 'rabbit-sinatra.csv'
-    @menu_items = []
-    CSV.foreach(data_file, headers: true, :encoding => 'utf-8') do |row|
-      @menu_items << row.to_hash
-    end
-    erb :burritos
+get "/eggsandsuch" do
+  data_file = 'rabbit-sinatra.csv'
+  @menu_items = []
+  CSV.foreach(data_file, headers: true, :encoding => 'utf-8') do |row|
+    @menu_items << row.to_hash
   end
+  erb :eggs_such
+end
 
-  get "/eggsandsuch" do
-    data_file = 'rabbit-sinatra.csv'
-    @menu_items = []
-    CSV.foreach(data_file, headers: true, :encoding => 'utf-8') do |row|
-      @menu_items << row.to_hash
-    end
-    erb :eggs_such
+get "/bombwiches" do
+  data_file = 'rabbit-sinatra.csv'
+  @menu_items = []
+  CSV.foreach(data_file, headers: true, :encoding => 'utf-8') do |row|
+    @menu_items << row.to_hash
   end
+  erb :bombwiches
+end
 
-  get "/bombwiches" do
-    data_file = 'rabbit-sinatra.csv'
-    @menu_items = []
-    CSV.foreach(data_file, headers: true, :encoding => 'utf-8') do |row|
-      @menu_items << row.to_hash
-    end
-    erb :bombwiches
+get "/tacos" do
+  data_file = 'rabbit-sinatra.csv'
+  @menu_items = []
+  CSV.foreach(data_file, headers: true, :encoding => 'utf-8') do |row|
+    @menu_items << row.to_hash
   end
+  erb :tacos
+end
 
-  get "/tacos" do
-    data_file = 'rabbit-sinatra.csv'
-    @menu_items = []
-    CSV.foreach(data_file, headers: true, :encoding => 'utf-8') do |row|
-      @menu_items << row.to_hash
-    end
-    erb :tacos
+get "/kids" do
+  data_file = 'rabbit-sinatra.csv'
+  @menu_items = []
+  CSV.foreach(data_file, headers: true, :encoding => 'utf-8') do |row|
+    @menu_items << row.to_hash
   end
+  erb :kids
+end
 
-  get "/kids" do
-    data_file = 'rabbit-sinatra.csv'
-    @menu_items = []
-    CSV.foreach(data_file, headers: true, :encoding => 'utf-8') do |row|
-      @menu_items << row.to_hash
-    end
-    erb :kids
+get "/lighterfare" do
+  data_file = 'rabbit-sinatra.csv'
+  @menu_items = []
+  CSV.foreach(data_file, headers: true, :encoding => 'utf-8') do |row|
+    @menu_items << row.to_hash
   end
+  erb :lighterfare
+end
 
-  get "/lighterfare" do
-    data_file = 'rabbit-sinatra.csv'
-    @menu_items = []
-    CSV.foreach(data_file, headers: true, :encoding => 'utf-8') do |row|
-      @menu_items << row.to_hash
-    end
-    erb :lighterfare
+get "/omeletsandskillets" do
+  data_file = 'rabbit-sinatra.csv'
+  @menu_items = []
+  CSV.foreach(data_file, headers: true, :encoding => 'utf-8') do |row|
+    @menu_items << row.to_hash
   end
+  erb :omeletsandskillets
+end
 
-  get "/omeletsandskillets" do
-    data_file = 'rabbit-sinatra.csv'
-    @menu_items = []
-    CSV.foreach(data_file, headers: true, :encoding => 'utf-8') do |row|
-      @menu_items << row.to_hash
-    end
-    erb :omeletsandskillets
+get "/lighterfare" do
+  data_file = 'rabbit-sinatra.csv'
+  @menu_items = []
+  CSV.foreach(data_file, headers: true, :encoding => 'utf-8') do |row|
+    @menu_items << row.to_hash
   end
+  erb :lighterfare
+end
 
-  get "/lighterfare" do
-    data_file = 'rabbit-sinatra.csv'
-    @menu_items = []
-    CSV.foreach(data_file, headers: true, :encoding => 'utf-8') do |row|
-      @menu_items << row.to_hash
-    end
-    erb :lighterfare
+get "/pancakes" do
+  data_file = 'rabbit-sinatra.csv'
+  @menu_items = []
+  CSV.foreach(data_file, headers: true, :encoding => 'utf-8') do |row|
+    @menu_items << row.to_hash
   end
+  erb :pancakes
+end
 
-  get "/pancakes" do
-    data_file = 'rabbit-sinatra.csv'
-    @menu_items = []
-    CSV.foreach(data_file, headers: true, :encoding => 'utf-8') do |row|
-      @menu_items << row.to_hash
-    end
-    erb :pancakes
+get "/sandwiches" do
+  data_file = 'rabbit-sinatra.csv'
+  @menu_items = []
+  CSV.foreach(data_file, headers: true, :encoding => 'utf-8') do |row|
+    @menu_items << row.to_hash
   end
+  erb :sandwiches
+end
 
-  get "/sandwiches" do
-    data_file = 'rabbit-sinatra.csv'
-    @menu_items = []
-    CSV.foreach(data_file, headers: true, :encoding => 'utf-8') do |row|
-      @menu_items << row.to_hash
-    end
-    erb :sandwiches
+get "/sides" do
+  data_file = 'rabbit-sinatra.csv'
+  @menu_items = []
+  CSV.foreach(data_file, headers: true, :encoding => 'utf-8') do |row|
+    @menu_items << row.to_hash
   end
+  erb :sides
+end
 
-  get "/sides" do
-    data_file = 'rabbit-sinatra.csv'
-    @menu_items = []
-    CSV.foreach(data_file, headers: true, :encoding => 'utf-8') do |row|
-      @menu_items << row.to_hash
-    end
-    erb :sides
+get "/soupsandsalads" do
+  data_file = 'rabbit-sinatra.csv'
+  @menu_items = []
+  CSV.foreach(data_file, headers: true, :encoding => 'utf-8') do |row|
+    @menu_items << row.to_hash
   end
+  erb :soupsandsalads
+end
 
-  get "/soupsandsalads" do
-    data_file = 'rabbit-sinatra.csv'
-    @menu_items = []
-    CSV.foreach(data_file, headers: true, :encoding => 'utf-8') do |row|
-      @menu_items << row.to_hash
-    end
-    erb :soupsandsalads
+get "/waffles" do
+  data_file = 'rabbit-sinatra.csv'
+  @menu_items = []
+  CSV.foreach(data_file, headers: true, :encoding => 'utf-8') do |row|
+    @menu_items << row.to_hash
   end
+  erb :waffles
+end
 
-  get "/waffles" do
-    data_file = 'rabbit-sinatra.csv'
-    @menu_items = []
-    CSV.foreach(data_file, headers: true, :encoding => 'utf-8') do |row|
-      @menu_items << row.to_hash
-    end
-    erb :waffles
+get "/breakfastsandwiches" do
+  data_file = 'rabbit-sinatra.csv'
+  @menu_items = []
+  CSV.foreach(data_file, headers: true, :encoding => 'utf-8') do |row|
+    @menu_items << row.to_hash
   end
-
-  get "/breakfastsandwiches" do
-    data_file = 'rabbit-sinatra.csv'
-    @menu_items = []
-    CSV.foreach(data_file, headers: true, :encoding => 'utf-8') do |row|
-      @menu_items << row.to_hash
-    end
-    erb :breakfast_sandwiches
-  end
-
+  erb :breakfast_sandwiches
 end
