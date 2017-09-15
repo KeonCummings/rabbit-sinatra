@@ -7,7 +7,7 @@ Tilt.register Tilt::ERBTemplate, 'html.erb'
 
 set :public_folder, 'public'
 
-class MyApp < Sinatra::Base; end
+class GrowlingRabbit < Sinatra::Base; end
 
   get "/" do
     erb :index
@@ -147,3 +147,5 @@ class MyApp < Sinatra::Base; end
     end
     erb :breakfast_sandwiches
   end
+
+end
